@@ -1,0 +1,43 @@
+* {
+    box-sizing: border-box;
+  }
+
+body {
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.main-form form{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.main-form form caption,
+.main-form form label{
+    display: block;
+}
+
+.main-form form label{
+    text-align: right;
+    padding: 1px;
+    margin: 1px;
+}
+
+.caja4{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-column: 1 / -1;
+    padding: 1px;
+    margin: 1px;
+    border: solid 1px;
+}
+
+.caja6{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-column: 1 / -1;
+    padding: 1px;
+    margin: 1px;
+    border: solid 1px;
+}

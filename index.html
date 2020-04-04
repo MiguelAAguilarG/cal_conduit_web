@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de tubería eléctrica</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>Calculadora de tubería eléctrica</header>
+
+    <div class="main-form">
+    <form action="">
+
+        <div class="caja4">
+            <label for="lista_desplegable_tipo_conduit">Tubería: </label>
+
+            <select name="lista_desplegable_tipo_conduit" id="lista_desplegable_tipo_conduit">
+                <option value="EMT">EMT</option> 
+                <option value="ENT">ENT</option> 
+                <option value="FMC">FMC</option>
+                <option value="IMC">IMC</option> 
+                <option value="LFNC-A*">LFNC-A*</option> 
+                <option value="LFNC-B*">LFNC-B*</option>
+                <option value="LFNC-C*">LFNC-C*</option>
+                <option value="RMC">RMC</option>
+                <option value="PVC, cédula 40">PVC, cédula 40</option>
+                <option value="HDPE">HDPE</option>
+                <option value="PVC, tipo A">PVC, tipo A</option>
+                <option value="PVC, tipo EB">PVC, tipo EB</option>
+            </select>
+
+            <label for="lista_desplegable_medida_conduit">Tamaño: </label>
+
+            <select name="lista_desplegable_medida_conduit" id="lista_desplegable_medida_conduit">
+                <option value="AUTO">AUTO</option> 
+                <option value="1/2">1/2</option>
+                <option value="3/4">3/4</option>
+                <option value="1">1</option>
+                <option value="1 1/4">1 1/4</option>
+                <option value="1 1/2">1 1/2</option>
+                <option value="2">2</option>
+                <option value="2 1/2">2 1/2</option>
+                <option value="3">3</option>
+                <option value="3 1/2">3 1/2</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+            </select>
+        </div>
+
+        <div class=caja4>
+            <label for="relleno_definido">Llenado (%)</label>
+            <input type="number" min="1" max="100" step="1" value="40" name="relleno_definido" id="relleno_definido">
+            <label for="auto_porcentaje_llenado">AUTO</label>
+            <input type="checkbox" name="auto_porcentaje_llenado" id="auto_porcentaje_llenado">
+        </div>
+
+        <div class=caja6>
+            <label for="lista_desplegable_aislamiento">Aislamiento: </label>
+            <select name="lista_desplegable_aislamiento" id="lista_desplegable_aislamiento">
+                <option value="t">AUTO</option> 
+                <option value="1/2">1/2</option>
+                <option value="3/4">3/4</option>
+                <option value="1">1</option>
+            </select>
+
+            <label for="lista_desplegable_calibre">Calibre: </label>
+            <select name="lista_desplegable_calibre" id="lista_desplegable_calibre">
+                <option value="t">AUTO</option> 
+                <option value="1/2">1/2</option>
+                <option value="3/4">3/4</option>
+                <option value="1">1</option>
+            </select>
+
+            <label for="numero_conductores">Numero: </label>
+            <input type="number" min="1" max="100" step="1" value="1" name="numero_conductores" id="numero_conductores">
+        </div>
+
+
+
+    </form>
+    </div>
+
+</body>
+<footer>
+
+</footer>
+</html>
