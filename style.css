@@ -8,17 +8,7 @@ body {
     margin-right: auto;
 }
 
-.main-form form{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-}
-
-.main-form form caption,
-.main-form form label{
-    display: block;
-}
-
-.main-form form label{
+.label-text-right{
     text-align: right;
     padding: 1px;
     margin: 1px;
@@ -40,4 +30,8 @@ body {
     padding: 1px;
     margin: 1px;
     border: solid 1px;
+}
+
+.margin-5px{
+    margin: 5px;
 }

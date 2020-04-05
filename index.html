@@ -9,11 +9,19 @@
 <body>
     <header>Calculadora de tubería eléctrica</header>
 
-    <div class="main-form">
+    <div">
+
     <form action="">
+        <div class= "caja4">
+            hola
+        </div>
+
+        <div class = margin-5px">
+            <hr>
+        </div>
 
         <div class="caja4">
-            <label for="lista_desplegable_tipo_conduit">Tubería: </label>
+            <label for="lista_desplegable_tipo_conduit" class="label-text-right">Tubería: </label>
 
             <select name="lista_desplegable_tipo_conduit" id="lista_desplegable_tipo_conduit">
                 <option value="EMT">EMT</option> 
@@ -30,84 +38,91 @@
                 <option value="PVC, tipo EB">PVC, tipo EB</option>
             </select>
 
-            <label for="lista_desplegable_medida_conduit">Tamaño: </label>
+            <label for="lista_desplegable_medida_conduit" class="label-text-right">Tamaño: </label>
 
             <select name="lista_desplegable_medida_conduit" id="lista_desplegable_medida_conduit">
                 <option value="AUTO">AUTO</option> 
-                <option value="1/2">1/2</option>
-                <option value="3/4">3/4</option>
-                <option value="1">1</option>
-                <option value="1 1/4">1 1/4</option>
-                <option value="1 1/2">1 1/2</option>
-                <option value="2">2</option>
-                <option value="2 1/2">2 1/2</option>
-                <option value="3">3</option>
-                <option value="3 1/2">3 1/2</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
+                <option value="1/2">1/2 in: 16 mm</option>
+                <option value="3/4">3/4 in: 21 mm</option>
+                <option value="1">1 in: 27 mm</option>
+                <option value="1 1/4">1 1/4 in: 35 mm</option>
+                <option value="1 1/2">1 1/2 in: 41 mm</option>
+                <option value="2">2 in: 53 mm</option>
+                <option value="2 1/2">2 1/2 in: 63 mm</option>
+                <option value="3">3 in: 78 mm</option>
+                <option value="3 1/2">3 1/2 in: 91 mm</option>
+                <option value="4">4 in: 103 mm</option>
+                <option value="5">5 in: 129 mm</option>
+                <option value="6">6 in: 155 mm</option>
             </select>
         </div>
 
         <div class=caja4>
-            <label for="relleno_definido">Llenado (%)</label>
+            <label for="relleno_definido" class="label-text-right">Llenado (%)</label>
             <input type="number" min="1" max="100" step="1" value="40" name="relleno_definido" id="relleno_definido">
-            <label for="auto_porcentaje_llenado">AUTO</label>
+            <label for="auto_porcentaje_llenado" class="label-text-right">AUTO</label>
             <input type="checkbox" name="auto_porcentaje_llenado" id="auto_porcentaje_llenado">
+        </div>
+        
+        <div class = margin-5px">
+            <hr>
         </div>
 
         <div class=caja6>
-            <label for="lista_desplegable_aislamiento">Aislamiento: </label>
+            <label for="lista_desplegable_aislamiento" class="label-text-right">Aislamiento: </label>
             <select name="lista_desplegable_aislamiento" id="lista_desplegable_aislamiento">
-                <option value="t">AUTO</option> 
-                <option value="1/2">1/2</option>
-                <option value="3/4">3/4</option>
-                <option value="1">1</option>
+                <option value="THW, THHW, THW-2">THW, THHW, THW-2</option> 
+                <option value="THHN, THWN, THWN-2">THHN, THWN, THWN-2</option>
+                <option value="XHH, XHHW, XHHW-2">XHH, XHHW, XHHW-2</option>
+                <option value="RHH, RHW, RHW-2">RHH, RHW, RHW-2</option>
+                <option value="RHH*, RHW*, RHW-2*">RHH*, RHW*, RHW-2*</option>
+                <option value="desnudo">Sin aislamiento</option>
             </select>
 
-            <label for="lista_desplegable_calibre">Calibre: </label>
+            <label for="lista_desplegable_calibre" class="label-text-right">Calibre: </label>
             <select name="lista_desplegable_calibre" id="lista_desplegable_calibre">
-                <option value="14"></option>
-                <option value="12"></option>
-                <option value="10"></option>
-                <option value="8"></option>
-                <option value="6"></option>
-                <option value="4"></option>
-                <option value="3"></option>
-                <option value="2"></option>
-                <option value="1"></option>
-                <option value="1/0"></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
+                <option value="14">14</option>
+                <option value="12">12</option>
+                <option value="10">10</option>
+                <option value="8">8</option>
+                <option value="6">6</option>
+                <option value="4">4</option>
+                <option value="3">3</option>
+                <option value="2">2</option>
+                <option value="1">1</option>
+                <option value="1/0">1/0</option>
+                <option value="2/0">2/0</option>
+                <option value="3/0">3/0</option>
+                <option value="4/0">4/0</option>
+                <option value="250">250</option>
+                <option value="300">300</option>
+                <option value="350">350</option>
+                <option value="400">400</option>
+                <option value="500">500</option>
+                <option value="600">600</option>
+                <option value="700">700</option>
+                <option value="750">750</option>
+                <option value="800">800</option>
+                <option value="900">900</option>
+                <option value="1000">1000</option>
+                <option value="1250">1250</option>
+                <option value="1500">1500</option>
+                <option value="1750">1570</option>
+                <option value="2000">2000</option>
             </select>
 
-            <label for="numero_conductores">Numero: </label>
+            <label for="numero_conductores" class="label-text-right">Numero: </label>
             <input type="number" min="1" max="100" step="1" value="1" name="numero_conductores" id="numero_conductores">
         </div>
-
-
-
     </form>
-    </div>
+
+    </div">
 
 </body>
 <footer>
 
 </footer>
 </html>
+
+
+
