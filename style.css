@@ -5,7 +5,7 @@
   }
 
 body {
-    max-width: 600px;
+    max-width: 550px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -54,19 +54,25 @@ h3{
 
 .caja4{
     display: grid;
-    grid-template-columns: minmax(5em, 0.7fr) 1fr minmax(8em, 8em) 1fr;
+    grid-template-columns: minmax(7.5em, 0.7fr) 1fr minmax(8em, 8em) minmax(5em, 7em);
     grid-column: 1 / -1;
     border: solid 1px;
+}
+
+.caja4_version2{
+    display: grid;
+    grid-template-columns: minmax(6em, 6em) minmax(6em, 6em) minmax(8em, 8em) minmax(5em, 0.8fr);
+    grid-column: 1 / -1;
 }
 
 .caja6{
     display: grid;
-    grid-template-columns:  minmax(8em, 8em) minmax(8em, 8em) minmax(3em, 3em) minmax(5em, 5em) minmax(5em, 5em) minmax(5em, 5em);
+    grid-template-columns:  minmax(8em, 8em) minmax(8em, 8em) minmax(3em, 3em) minmax(4em, 4em) minmax(3em, 3em) minmax(3em, 3em);
     grid-column: 1 / -1;
     border: solid 1px;
 }
 
-.caja3, .caja4, .caja6, .caja5{
+.caja3, .caja4, .caja4_version2, .caja6{
     margin: 2px;
     padding: 2px;
 }
@@ -104,12 +110,7 @@ h3{
     text-align: center;
 }
 
-@media screen and (min-width:650px) and (max-width:1000px) {
+@media screen and (min-width:400px) and (max-width:550px) {
     body{max-width: 100%;}
-    .p_resultado{font-size: 1.9vw; padding-bottom: 2px;}
-    }
-
-@media screen and (max-width:650px) {
-    body{max-width: 100%;}
-    .p_resultado{font-size: 1.65vw; padding-bottom: 10px;}
+    .p_resultado{font-size: 2.3vw; padding-bottom: 2px;}
     }
