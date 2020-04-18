@@ -1,11 +1,87 @@
 * {
     box-sizing: border-box;
+    margin: 1px;
+    padding: 1px;
   }
 
 body {
-    max-width: 640px;
+    max-width: 600px;
     margin-left: auto;
     margin-right: auto;
+}
+
+header{
+    margin: 0 auto;
+    font-size: x-large;
+    text-align: center;
+    padding: 5px;
+}
+
+footer{
+
+    padding: 10px;
+}
+
+p{
+    margin: 0px;
+    padding: 0px;
+}
+
+h3{
+    margin: 0px auto;
+    line-height: 1em;
+    padding: 0px;
+}
+
+.p_resultado{
+    border: solid 1px;
+    margin-right: 2px;
+    margin-left: 2px;
+    padding: 1px 1px 2px 1px;
+    height: 1.4em;
+    min-width: 1em;
+}
+
+.caja_contenedor{
+    border: solid 1px;
+}
+
+.caja3{
+    display: grid;
+    grid-template-columns: minmax(5em, 0.6fr) minmax(5em, 0.6fr) minmax(5em, 0.4fr);
+    grid-column: 1 / -1;
+}
+
+.caja4{
+    display: grid;
+    grid-template-columns: minmax(5em, 0.7fr) 1fr minmax(8em, 8em) 1fr;
+    grid-column: 1 / -1;
+    border: solid 1px;
+}
+
+.caja6{
+    display: grid;
+    grid-template-columns:  minmax(8em, 8em) minmax(8em, 8em) minmax(3em, 3em) minmax(5em, 5em) minmax(5em, 5em) minmax(5em, 5em);
+    grid-column: 1 / -1;
+    border: solid 1px;
+}
+
+.caja3, .caja4, .caja6, .caja5{
+    margin: 2px;
+    padding: 2px;
+}
+
+.margin-text
+{
+    text-align: right;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.text-center{
+    text-align: center;
+    padding: 1px;
+    margin: 1px;
 }
 
 .label-text-right{
@@ -14,24 +90,26 @@ body {
     margin: 1px;
 }
 
-.caja4{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-column: 1 / -1;
-    padding: 1px;
-    margin: 1px;
-    border: solid 1px;
+.text-chico{
+    font-size: small;
 }
 
-.caja6{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-column: 1 / -1;
-    padding: 1px;
-    margin: 1px;
-    border: solid 1px;
+.nota{
+    font-style: italic;
+    font-size: small;
 }
 
-.margin-5px{
-    margin: 5px;
+#autor{
+    margin: 0 auto;
+    text-align: center;
 }
+
+@media screen and (min-width:650px) and (max-width:1000px) {
+    body{max-width: 100%;}
+    .p_resultado{font-size: 1.9vw; padding-bottom: 2px;}
+    }
+
+@media screen and (max-width:650px) {
+    body{max-width: 100%;}
+    .p_resultado{font-size: 1.65vw; padding-bottom: 10px;}
+    }
