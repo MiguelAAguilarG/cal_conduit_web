@@ -236,7 +236,7 @@ function obtener_variables() {
     return {$tipo_conduit: $tipo_conduit, $medida_conduit_input: $medida_conduit_input, $llenado_porc_input: $llenado_porc_input, $auto_llenado: $auto_llenado, $cables: $cables};
 }
 
-function agregar() {
+function agregar(validacion_quitar = false) {
     console.log("agregar_inicio");
     var cables = document.getElementById('formulario2');
     var aux = "";
@@ -249,12 +249,15 @@ function agregar() {
     var aux_calibre;
     var aux_numero_conductores;
 
-    for(let i = 1; i < indice; i++) {
-        aux_aislamiento = document.getElementById("lista_desplegable_aislamiento" + String(i)).value;
-        aux_calibre = document.getElementById("lista_desplegable_calibre" + String(i)).value;
-        aux_numero_conductores = Number(document.getElementById("numero_conductores" + String(i)).value);
+    for(let i = 1; i <= indice; i++) {
+        if (validacion_quitar == true || i < indice) {
+            aux_aislamiento = document.getElementById("lista_desplegable_aislamiento" + String(i)).value;
+            aux_calibre = document.getElementById("lista_desplegable_calibre" + String(i)).value;
+            aux_numero_conductores = Number(document.getElementById("numero_conductores" + String(i)).value);
+    
+            $cables.push([aux_aislamiento, aux_calibre, aux_numero_conductores]); 
+        }
 
-        $cables.push([aux_aislamiento, aux_calibre, aux_numero_conductores]);
     }
 
     for(let i = 1; i <= indice; i++) {
@@ -308,24 +311,34 @@ function agregar() {
     
     cables.innerHTML = aux;
 
-    var e = 0;
-    for(let i = 1; i < indice; i++) {
+    aux_aislamiento = document.getElementById("lista_desplegable_aislamiento" + String(indice)).value;
+    aux_calibre = document.getElementById("lista_desplegable_calibre" + String(indice)).value;
+    aux_numero_conductores = Number(document.getElementById("numero_conductores" + String(indice)).value);
 
+    $cables.push([aux_aislamiento, aux_calibre, aux_numero_conductores]);
+
+    var e = 0;
+    for(let i = 1; i <= indice; i++) {
         document.getElementById("lista_desplegable_aislamiento" + String(i)).value = $cables[e][0];
         document.getElementById("lista_desplegable_calibre" + String(i)).value = $cables[e][1];
         document.getElementById("numero_conductores" + String(i)).value = $cables[e][2];
+        console.log(e);
         e = e+1;
     }
 
     calculo_principal();
+
 }
 
 function quitar() {
-    console.log("quitar_inicio")
+    console.log("quitar_inicio");
+
+    validacion_quitar = true;
     if (indice <= 1) {
         indice = 1;
     } else {
         indice = indice-2;
-        agregar();
+        agregar(validacion_quitar);
     }
+
 }
