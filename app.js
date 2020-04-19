@@ -322,7 +322,6 @@ function agregar(validacion_quitar = false) {
         document.getElementById("lista_desplegable_aislamiento" + String(i)).value = $cables[e][0];
         document.getElementById("lista_desplegable_calibre" + String(i)).value = $cables[e][1];
         document.getElementById("numero_conductores" + String(i)).value = $cables[e][2];
-        console.log(e);
         e = e+1;
     }
 
