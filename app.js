@@ -121,8 +121,7 @@ function calculo_principal() {
         }  
     }
 
-    var llenado_mm_conduit_calculado = object_tamano_conduit.llenado_mm_conduit_calculado;
-    document.getElementById("llenado_mm").innerHTML = llenado_mm_conduit_calculado;
+    document.getElementById("llenado_mm").innerHTML = $suma_areas;
 
     document.getElementById("tamano_aprox").innerHTML = tamano_completo_conduit_string_array[$indice_conduit_seleccionado];
     document.getElementById("D_interno_aprox").innerHTML = object_tamano_conduit.mm_tamano_conduit;
