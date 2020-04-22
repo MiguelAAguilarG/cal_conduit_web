@@ -27,10 +27,24 @@ p{
     padding: 0px;
 }
 
-h3{
+h4{
     margin: 0px auto;
     line-height: 1em;
     padding: 0px;
+}
+
+.h4_resultados{
+    margin: 0px auto;
+    line-height: 1em;
+    padding: 0px;
+    background-color: aliceblue;
+}
+
+.h4_datos{
+    margin: 0px auto;
+    line-height: 1em;
+    padding: 0px;
+    background-color: azure;
 }
 
 .p_resultado{
@@ -40,6 +54,17 @@ h3{
     padding: 1px 1px 2px 1px;
     height: 1.4em;
     min-width: 1em;
+    background-color: aliceblue;
+}
+
+.p_resultado_cables{
+    border: solid 1px;
+    margin: 2px;
+    background-color: aliceblue;
+}
+
+.datos{
+    background-color: azure;
 }
 
 .caja_contenedor{
@@ -48,7 +73,19 @@ h3{
 
 .caja3{
     display: grid;
+    grid-template-columns: minmax(5em, 0.6fr) minmax(5em, 0.2fr);
+    grid-column: 1 / -1;
+}
+
+.caja3{
+    display: grid;
     grid-template-columns: minmax(5em, 0.6fr) minmax(5em, 0.6fr) minmax(5em, 0.4fr);
+    grid-column: 1 / -1;
+}
+
+.caja3_cables{
+    display: grid;
+    grid-template-columns: minmax(5em, 0.6fr) minmax(5em, 0.6fr) minmax(5em, 0.4fr) minmax(5em, 0.5fr);
     grid-column: 1 / -1;
 }
 
@@ -57,6 +94,19 @@ h3{
     grid-template-columns: minmax(7.5em, 0.7fr) 1fr minmax(8em, 8em) minmax(5em, 7em);
     grid-column: 1 / -1;
     border: solid 1px;
+}
+
+.caja4_cables{
+    display: grid;
+    grid-template-columns: minmax(5em, 0.7fr) minmax(5em, 0.5fr) minmax(5em, 0.3fr) minmax(5em, 0.5fr);
+    grid-column: 1 / -1;
+    border: solid 1px;
+}
+
+.caja4_cables_sin_borde{
+    display: grid;
+    grid-template-columns: minmax(5em, 0.7fr) minmax(5em, 0.5fr) minmax(5em, 0.3fr) minmax(5em, 0.5fr);
+    grid-column: 1 / -1;
 }
 
 .caja4_version2{

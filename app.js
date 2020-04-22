@@ -7,6 +7,16 @@ const aislantes_conductor_array = [
     ['desnudo', [2.68, 4.25, 6.76, 10.76, 17.09, 27.19, 34.28, 43.23, 55.80, 70.41, 88.74, 111.9, 141.1, 168, 201, 235, 268, 336, 404, 471, 505, 538, 606, 673, 842, 1011, 1180, 1349]]
 ];
 
+//hacerlo bien
+const aislantes_conductor_D_array = [
+    ['THW, THHW, THW-2', [14, 16, 15.68, 28.19, 46.84, 62.77, 73.16, 86.00, 122.6, 143.4, 169.3, 201.1, 239.9, 296.5, 340.7, 384.4, 427.0, 509.7, 627.7, 710.3, 751.7, 791.7, 874.9, 953.8, 1200, 1400, 1598, 1795]],
+    ['THHN, THWN, THWN-2', [6.258, 8.581, 13.61, 23.61, 32.71, 53.16, 62.77, 74.71, 100.8, 119.7, 143.4, 172.8, 208.8, 256.1, 297.3, 338.2, 378.3, 456.3, 559.7, 637.9, 677.2, 715.2, 794.3, 869.5, 0, 0, 0, 0]],
+    ['XHH, XHHW, XHHW-2', [8.968, 11.68, 15.58, 28.19, 38.06, 52.52, 62.06, 73.94, 98.97, 117.7, 141.3, 170.5, 206.3, 251.9, 292.6, 333.3, 373.3, 450.6, 561.9, 640.2, 679.5, 717.5, 796.8, 872.2, 1108, 1300, 1492, 1682]],
+    ['RHH, RHW, RHW-2', [18.90, 22.77, 28.19, 53.87, 67.16, 86.00, 98.13, 112.9, 171.6, 196.1, 226.1, 262.7, 306.7, 405.9, 457.3, 507.7, 556.5, 650.5, 782.9, 874.9, 920.8, 965.0, 1057, 1143, 1515, 1738, 1959, 2175]],
+    ['RHH*, RHW*, RHW-2*', [13.48, 16.77, 21.48, 35.87, 46.84, 62.77, 73.16, 86.00, 112.6, 143.4, 169.3, 201.1, 239.9, 296.5, 340.7, 384.4, 427.0, 509.7, 627.7, 710.3, 751.7, 791.7, 874.9, 953.8, 1200, 1400, 1598, 1795]],
+    ['desnudo', [2.68, 4.25, 6.76, 10.76, 17.09, 27.19, 34.28, 43.23, 55.80, 70.41, 88.74, 111.9, 141.1, 168, 201, 235, 268, 336, 404, 471, 505, 538, 606, 673, 842, 1011, 1180, 1349]]
+];
+
 const tipos_conduit_array = [
     ['EMT', [15.8, 20.9, 26.6, 35.1, 40.9, 52.5, 69.4, 85.2, 97.4, 110.1, 0, 0]],
     ['ENT', [14.2, 19.3, 25.4, 34, 39.9, 51.3, 0, 0, 0, 0, 0, 0]],
@@ -26,7 +36,7 @@ const tipos_conduit_array = [
 
 const calibres_string_array = ['14', '12', '10', '8', '6', '4', '3', '2', '1', '1/0', '2/0', '3/0', '4/0', '250', '300', '350', '400', '500', '600', '700', '750', '800', '900', '1000', '1250', '1500', '1750', '2000'];
 
-const porcentaje_llenado_array = [53, 31, 40];
+const porcentaje_llenado_array = [[1,53], [2,31], [3,40]];
 
 const tamano_conduit_string_array = ["1/2", "3/4", "1", "1 1/4", "1 1/2", "2", "2 1/2", "3", "3 1/2", "4", "5", "6"];
 
@@ -42,6 +52,8 @@ function calculo_principal() {
     console.log("cambio");
 
     var object_variables = obtener_variables();
+
+    var $decimales = Number(object_variables.$decimales);
 
     var $tipo_conduit = object_variables.$tipo_conduit;
     var $medida_conduit_input = object_variables.$medida_conduit_input;
@@ -92,15 +104,12 @@ function calculo_principal() {
     if ($auto_llenado == true) {
         document.getElementById("input_llenado_porc").disabled = true;
 
-        if ($cantidad_conductores == 0) {
-            document.getElementById("input_llenado_porc").value = 100;
-        } else if($cantidad_conductores == 1) {
-            document.getElementById("input_llenado_porc").value = 53;
-        } else if($cantidad_conductores == 2) {
-            document.getElementById("input_llenado_porc").value = 31;
-        } else{
-            document.getElementById("input_llenado_porc").value = 40;
+        for (let i = 0; i < porcentaje_llenado_array.length; i++) {
+            if ($cantidad_conductores >= porcentaje_llenado_array[i][0]) {
+                document.getElementById("input_llenado_porc").value = porcentaje_llenado_array[i][1], $decimales;
+            }
         }
+
     } else{
         document.getElementById("input_llenado_porc").disabled = false;
     }
@@ -119,6 +128,13 @@ function calculo_principal() {
             }
     
         }  
+    }
+
+    D_mm_cable_elegido_array = D_ext_cable($cables);
+
+    for(let i = 0; i < indice; i++) {
+        aux_D_exterior = document.getElementById("D_exterior" + String(i+1)).innerHTML = D_mm_cable_elegido_array[i];
+        console.log("hola",  D_mm_cable_elegido_array[i]);
     }
 
     document.getElementById("llenado_mm").innerHTML = $suma_areas;
@@ -184,7 +200,7 @@ function sumador_areas($cables) {
     
     for (let i_input_tipo_cable = 0; i_input_tipo_cable < indice; i_input_tipo_cable++) {
 
-        for (let i_tipo_cable_array = 0; i_tipo_cable_array < 6; i_tipo_cable_array++) {
+        for (let i_tipo_cable_array = 0; i_tipo_cable_array < aislantes_conductor_array.length; i_tipo_cable_array++) {
             if (aislantes_conductor_array[i_tipo_cable_array][0] == $cables[i_input_tipo_cable][0]) {
                 area_mm_cable_elegido_array_array.push(aislantes_conductor_array[i_tipo_cable_array][1]);
                 break;
@@ -209,7 +225,38 @@ function sumador_areas($cables) {
 
 }
 
+function D_ext_cable($cables) {
+
+    var D_mm_cable_elegido_array_array = [];
+    var D_mm_cable_elegido_array = [];
+    
+    for (let i_input_tipo_cable = 0; i_input_tipo_cable < indice; i_input_tipo_cable++) {
+
+        for (let i_tipo_cable_array = 0; i_tipo_cable_array < aislantes_conductor_D_array.length; i_tipo_cable_array++) {
+            if (aislantes_conductor_D_array[i_tipo_cable_array][0] == $cables[i_input_tipo_cable][0]) {
+                D_mm_cable_elegido_array_array.push(aislantes_conductor_D_array[i_tipo_cable_array][1]);
+                break;
+            }
+        }
+
+        for (let i_input_calibre = 0; i_input_calibre < 28; i_input_calibre++) {
+            if (calibres_string_array[i_input_calibre] == $cables[i_input_tipo_cable][1]) {
+                D_mm_cable_elegido_array.push(D_mm_cable_elegido_array_array[i_input_tipo_cable][i_input_calibre]);
+                break;
+            }
+        }
+
+    }
+
+    console.log(D_mm_cable_elegido_array_array, D_mm_cable_elegido_array)
+
+    return D_mm_cable_elegido_array;
+
+}
+
 function obtener_variables() {
+    var $decimales = Number(document.getElementById("decimales").value);
+
     var $tipo_conduit = document.getElementById("lista_desplegable_tipo_conduit").value;
     var $medida_conduit_input = document.getElementById("lista_desplegable_medida_conduit").value;
 
@@ -217,7 +264,6 @@ function obtener_variables() {
     var $auto_llenado = document.getElementById("auto_llenado_porc").checked;
 
     var $cables = [];
-
     var aux_aislamiento;
     var aux_calibre;
     var aux_numero_conductores;
@@ -232,7 +278,7 @@ function obtener_variables() {
 
     console.log($tipo_conduit, $medida_conduit_input, $llenado_porc_input, $auto_llenado, $cables);
 
-    return {$tipo_conduit: $tipo_conduit, $medida_conduit_input: $medida_conduit_input, $llenado_porc_input: $llenado_porc_input, $auto_llenado: $auto_llenado, $cables: $cables};
+    return {$decimales:$decimales, $tipo_conduit: $tipo_conduit, $medida_conduit_input: $medida_conduit_input, $llenado_porc_input: $llenado_porc_input, $auto_llenado: $auto_llenado, $cables: $cables};
 }
 
 function agregar(validacion_quitar = false) {
@@ -262,8 +308,8 @@ function agregar(validacion_quitar = false) {
     for(let i = 1; i <= indice; i++) {
 
         aux += `
-            <div class=caja3>
-                <select name="lista_desplegable_aislamiento" id="lista_desplegable_aislamiento${i}">
+            <div class=caja4_cables>
+                <select name="lista_desplegable_aislamiento" id="lista_desplegable_aislamiento${i}" class="datos">
                     <option value="THW, THHW, THW-2">THW, THHW, THW-2</option> 
                     <option value="THHN, THWN, THWN-2">THHN, THWN, THWN-2</option>
                     <option value="XHH, XHHW, XHHW-2">XHH, XHHW, XHHW-2</option>
@@ -272,7 +318,7 @@ function agregar(validacion_quitar = false) {
                     <option value="desnudo">Sin aislamiento</option>
                 </select>
 
-                <select name="lista_desplegable_calibre" id="lista_desplegable_calibre${i}">
+                <select name="lista_desplegable_calibre" id="lista_desplegable_calibre${i}" class="datos">
                     <option value="14">14</option>
                     <option value="12">12</option>
                     <option value="10">10</option>
@@ -303,7 +349,9 @@ function agregar(validacion_quitar = false) {
                     <option value="2000">2000</option>
                 </select>
 
-                <input type="number" min="0" step="1" value=1 name="numero_conductores" id="numero_conductores${i}">
+                <input type="number" min="0" step="1" value=1 name="numero_conductores" id="numero_conductores${i}" class="datos">
+
+                <p id="D_exterior${i}" class = "p_resultado_cables"></p>
             </div>
         `;
     }

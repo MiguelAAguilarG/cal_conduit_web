@@ -12,13 +12,19 @@
 <body>
     <header>Calculadora de tubería eléctrica</header>
 
-    <h3>Resultados</h3>
+        <h4 class="h4_resultados">Resultados</h4>
+
+    <div class="caja2">
+        <label for="decimales" class="label-text-right">Decimales: </label>
+        <input type="number" min="3" max="16" step="1" value="3" name="decimales" id="decimales" class="datos">
+    </div>
+
     <div class="caja_contenedor">
         <div class="caja4">
             <p></p>
             <p class="text-p">Llenado<span class="text-chico">[%]</span></p>
             <p class="text-p">Tamaño</p>
-            <p class="text-p">D. interno<span class="text-chico">[mm]</span></p>
+            <p class="text-p">D. interior<span class="text-chico">[mm]</span></p>
         </div>
         <div class="caja4">
             <p class = "margin-text">Tamaño menor</p>
@@ -50,12 +56,12 @@
 
     </div>
 
-    <h3>Datos</h3>
+    <h4 class="h4_datos">Datos</h4>
 
     <div class="caja_contenedor">
         <form id="formulario">
             <div class=".caja6">
-                <select name="lista_desplegable_tipo_conduit" id="lista_desplegable_tipo_conduit">
+                <select name="lista_desplegable_tipo_conduit" id="lista_desplegable_tipo_conduit" class="datos">
                     <option value="EMT">EMT</option> 
                     <option value="ENT">ENT</option> 
                     <option value="FMC">FMC</option>
@@ -70,7 +76,7 @@
                     <option value="PVC, tipo EB">PVC, tipo EB</option>
                 </select>
 
-                <select name="lista_desplegable_medida_conduit" id="lista_desplegable_medida_conduit">
+                <select name="lista_desplegable_medida_conduit" id="lista_desplegable_medida_conduit" class="datos">
                     <option value="AUTO " selected>AUTO</option> 
                     <option value="1/2">1/2 in: &nbsp;&nbsp; 16 mm</option>
                     <option value="3/4">3/4 in: &nbsp;&nbsp; 21 mm</option>
@@ -87,24 +93,25 @@
                 </select>
 
                 <label for="input_llenado_porc" class="label-text-right">Llenado[%]: </label>
-                <input type="number" min="1" max="100" step="1" value="40" name="input_llenado_porc" id="input_llenado_porc">
+                <input type="number" min="1" max="100" step="1" value="40" name="input_llenado_porc" id="input_llenado_porc" class="datos">
                 <label for="auto_llenado_porc" class="label-text-right">AUTO: </label>
-                <input type="checkbox" name="auto_llenado_porc" id="auto_llenado_porc" checked>
+                <input type="checkbox" name="auto_llenado_porc" id="auto_llenado_porc" class="datos" checked>
 
             </div>
         </form>  
     </div>
 
-    <div class=caja3>
+    <div class="caja4_cables_sin_borde">
         <p class="text-p">Aislamiento</p>
         <p class="text-p">Calibre<span class="text-chico">[AWG/kcmil]</span></p>
         <p class="text-p">Cantidad</p>
+        <p class="text-p">D. exterior [mm]</p>
     </div>
         
     <div class="caja_contenedor">
         <form id="formulario2">
-            <div class=caja3>
-                <select name="lista_desplegable_aislamiento" id="lista_desplegable_aislamiento1">
+            <div class="caja4_cables">
+                <select name="lista_desplegable_aislamiento" id="lista_desplegable_aislamiento1" class="datos">
                     <option value="THW, THHW, THW-2">THW, THHW, THW-2</option> 
                     <option value="THHN, THWN, THWN-2">THHN, THWN, THWN-2</option>
                     <option value="XHH, XHHW, XHHW-2">XHH, XHHW, XHHW-2</option>
@@ -113,7 +120,7 @@
                     <option value="desnudo">Sin aislamiento</option>
                 </select>
 
-                <select name="lista_desplegable_calibre" id="lista_desplegable_calibre1">
+                <select name="lista_desplegable_calibre" id="lista_desplegable_calibre1" class="datos">
                     <option value="14">14</option>
                     <option value="12">12</option>
                     <option value="10">10</option>
@@ -144,22 +151,20 @@
                     <option value="2000">2000</option>
                 </select>
     
-                <input type="number" min="0" step="1" value="1" name="numero_conductores" id="numero_conductores1">
+                <input type="number" min="0" step="1" value="1" name="numero_conductores" id="numero_conductores1" class="datos">
+
+                <p id="D_exterior1" class = "p_resultado_cables"></p>
             </div>
 
         </form>
 
         <div class=caja4_version2>
-            <input type="button" value="Quitar"  onclick="quitar()">
-            <input type="button" value="Agregar" onclick="agregar()">
+            <input type="button" value="Quitar"  onclick="quitar()" class="datos">
+            <input type="button" value="Agregar" onclick="agregar()" class="datos">
         </div>
     </div>
 
-    <script src="app.js"></script>
-    
-</body>
 
-<footer>
     <p class="nota">No aplica condiciones de atascamiento</p>
     <p class="nota">NOM-001-SEDE-2012</p>
     <p class="nota">NEC</p>
@@ -172,6 +177,12 @@
             <li>Table 8</li>
         </ul>
     </ul>
+
+    <script src="app.js"></script>
+    
+</body>
+
+<footer>
     <p id="autor" > By Miguel Ángel Aguilar García</p>
 </footer>
 </html>
