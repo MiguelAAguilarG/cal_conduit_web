@@ -27,26 +27,6 @@ p{
     padding: 0px;
 }
 
-h4{
-    margin: 0px auto;
-    line-height: 1em;
-    padding: 0px;
-}
-
-.h4_resultados{
-    margin: 0px auto;
-    line-height: 1em;
-    padding: 0px;
-    background-color: aliceblue;
-}
-
-.h4_datos{
-    margin: 0px auto;
-    line-height: 1em;
-    padding: 0px;
-    background-color: azure;
-}
-
 .p_resultado{
     border: solid 1px;
     margin-right: 2px;
@@ -60,33 +40,24 @@ h4{
 .p_resultado_cables{
     border: solid 1px;
     margin: 2px;
+    padding-left: 2px;
     background-color: aliceblue;
 }
 
 .datos{
-    background-color: azure;
+    background-color: lightcyan;
 }
 
 .caja_contenedor{
-    border: solid 1px;
+    border: solid 2px;
 }
 
-.caja3{
+.caja2{
     display: grid;
-    grid-template-columns: minmax(5em, 0.6fr) minmax(5em, 0.2fr);
+    grid-template-columns: minmax(5em, 0.15fr) minmax(5em, 5em);
     grid-column: 1 / -1;
-}
-
-.caja3{
-    display: grid;
-    grid-template-columns: minmax(5em, 0.6fr) minmax(5em, 0.6fr) minmax(5em, 0.4fr);
-    grid-column: 1 / -1;
-}
-
-.caja3_cables{
-    display: grid;
-    grid-template-columns: minmax(5em, 0.6fr) minmax(5em, 0.6fr) minmax(5em, 0.4fr) minmax(5em, 0.5fr);
-    grid-column: 1 / -1;
+    margin: 2px;
+    padding: 2px;
 }
 
 .caja4{
@@ -94,6 +65,16 @@ h4{
     grid-template-columns: minmax(7.5em, 0.7fr) 1fr minmax(8em, 8em) minmax(5em, 7em);
     grid-column: 1 / -1;
     border: solid 1px;
+    margin: 2px;
+    padding: 2px;
+}
+
+.caja4_sin_borde{
+    display: grid;
+    grid-template-columns: minmax(7.5em, 0.7fr) 1fr minmax(8em, 8em) minmax(5em, 7em);
+    grid-column: 1 / -1;
+    margin: 2px;
+    padding: 2px;
 }
 
 .caja4_cables{
@@ -101,28 +82,31 @@ h4{
     grid-template-columns: minmax(5em, 0.7fr) minmax(5em, 0.5fr) minmax(5em, 0.3fr) minmax(5em, 0.5fr);
     grid-column: 1 / -1;
     border: solid 1px;
+    margin: 2px;
+    padding: 2px;
 }
 
 .caja4_cables_sin_borde{
     display: grid;
     grid-template-columns: minmax(5em, 0.7fr) minmax(5em, 0.5fr) minmax(5em, 0.3fr) minmax(5em, 0.5fr);
     grid-column: 1 / -1;
+    margin: 2px;
+    padding: 2px;
 }
 
 .caja4_version2{
     display: grid;
     grid-template-columns: minmax(6em, 6em) minmax(6em, 6em) minmax(8em, 8em) minmax(5em, 0.8fr);
     grid-column: 1 / -1;
+    margin: 2px;
+    padding: 2px;
 }
 
 .caja6{
     display: grid;
-    grid-template-columns:  minmax(8em, 8em) minmax(8em, 8em) minmax(3em, 3em) minmax(4em, 4em) minmax(3em, 3em) minmax(3em, 3em);
+    grid-template-columns: minmax(5em, 8em) minmax(5em, 8em) minmax(6em, 6em) minmax(4em, 4em) minmax(4em, 4em) minmax(2em, 2em);
     grid-column: 1 / -1;
     border: solid 1px;
-}
-
-.caja3, .caja4, .caja4_version2, .caja6{
     margin: 2px;
     padding: 2px;
 }

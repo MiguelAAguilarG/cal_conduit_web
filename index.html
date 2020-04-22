@@ -12,19 +12,17 @@
 <body>
     <header>Calculadora de tubería eléctrica</header>
 
-        <h4 class="h4_resultados">Resultados</h4>
-
-    <div class="caja2">
+    <div class="caja2" id="formulario0">
         <label for="decimales" class="label-text-right">Decimales: </label>
         <input type="number" min="3" max="16" step="1" value="3" name="decimales" id="decimales" class="datos">
     </div>
 
     <div class="caja_contenedor">
-        <div class="caja4">
+        <div class="caja4_sin_borde">
             <p></p>
-            <p class="text-p">Llenado<span class="text-chico">[%]</span></p>
-            <p class="text-p">Tamaño</p>
-            <p class="text-p">D. interior<span class="text-chico">[mm]</span></p>
+            <p>Llenado<span class="text-chico">[%]</span></p>
+            <p>Tamaño</p>
+            <p>D. interior<span class="text-chico">[mm]</span></p>
         </div>
         <div class="caja4">
             <p class = "margin-text">Tamaño menor</p>
@@ -56,11 +54,9 @@
 
     </div>
 
-    <h4 class="h4_datos">Datos</h4>
-
     <div class="caja_contenedor">
         <form id="formulario">
-            <div class=".caja6">
+            <div class="caja6">
                 <select name="lista_desplegable_tipo_conduit" id="lista_desplegable_tipo_conduit" class="datos">
                     <option value="EMT">EMT</option> 
                     <option value="ENT">ENT</option> 
@@ -100,15 +96,16 @@
             </div>
         </form>  
     </div>
-
-    <div class="caja4_cables_sin_borde">
-        <p class="text-p">Aislamiento</p>
-        <p class="text-p">Calibre<span class="text-chico">[AWG/kcmil]</span></p>
-        <p class="text-p">Cantidad</p>
-        <p class="text-p">D. exterior [mm]</p>
-    </div>
         
     <div class="caja_contenedor">
+
+        <div class="caja4_cables_sin_borde">
+            <p class="text-p">Aislamiento</p>
+            <p class="text-p">Calibre <span class="text-chico">[AWG/kcmil]</span></p>
+            <p class="text-p">Cantidad</p>
+            <p class="text-p">D. exterior [mm]</p>
+        </div>
+
         <form id="formulario2">
             <div class="caja4_cables">
                 <select name="lista_desplegable_aislamiento" id="lista_desplegable_aislamiento1" class="datos">
