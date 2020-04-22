@@ -2,6 +2,7 @@
     box-sizing: border-box;
     margin: 1px;
     padding: 1px;
+    font-size: 2.2vw;
   }
 
 body {
@@ -155,4 +156,5 @@ p{
 @media screen and (min-width:400px) and (max-width:549px) {
     body{max-width: 100%;}
     .p_resultado{font-size: 2.2vw; padding-bottom: 2px;}
+    *{font-size: 2.2vw;}
     }
