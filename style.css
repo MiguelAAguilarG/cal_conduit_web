@@ -55,7 +55,7 @@ p{
 
 .caja4, .caja4_sin_borde{
     display: grid;
-    grid-template-columns: minmax(8em, 8em) minmax(11em, 1fr) minmax(8em, 8em) minmax(5em, 8em);
+    grid-template-columns: minmax(9em, 9em) minmax(11em, 1fr) minmax(8em, 8em) minmax(5em, 8em);
     grid-column: 1 / -1;
     margin: 2px;
     padding: 2px;
