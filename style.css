@@ -67,7 +67,7 @@ p{
 
 .caja4_cables, .caja4_cables_sin_borde{
     display: grid;
-    grid-template-columns: minmax(11em, 1fr) minmax(9em, 9em) minmax(5em, 5em) minmax(8em, 8em);
+    grid-template-columns: minmax(10.5em, 1fr) minmax(9em, 9em) minmax(5em, 5em) minmax(8em, 8em);
     grid-column: 1 / -1;
     margin: 2px;
     padding: 2px;
@@ -132,6 +132,10 @@ p{
 
 #autor{
     margin: 0 auto;
+    text-align: center;
+}
+
+#Miblog{
     text-align: center;
 }
 
