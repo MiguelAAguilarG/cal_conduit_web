@@ -320,6 +320,7 @@ function agregar(validacion_quitar = false) {
                     <option value="RHH, RHW, RHW-2">RHH, RHW, RHW-2</option>
                     <option value="RHH*, RHW*, RHW-2*">RHH*, RHW*, RHW-2*</option>
                     <option value="desnudo">Sin aislamiento</option>
+                    <option value="Solar (PV Accesories)">Solar (PV Accesories)</option>
                 </select>
 
                 <select name="lista_desplegable_calibre" id="lista_desplegable_calibre${i}" class="datos">
