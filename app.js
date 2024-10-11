@@ -58,18 +58,18 @@ window.addEventListener("DOMContentLoaded", first, false);
 function first() {
 
     document.body.innerHTML = `
-    <header>Calculadora de tubería eléctrica</header>
+    <header>Calculadora de tubería (conduit) eléctrica</header>
 
     <div class="caja2" id="formulario0">
-        <label for="decimales" class="label-text-right">Decimales (en resultados): </label>
+        <label for="decimales" class="label-text-right">Decimals (result): </label>
         <input type="number" min="3" max="16" step="1" value="3" name="decimales" id="decimales" class="datos">
     </div>
 
     <div class="caja_contenedor">
         <div class="caja4_sin_borde">
             <p></p>
-            <p>Llenado<span class="text-chico">[%]</span></p>
-            <p>Tamaño</p>
+            <p>Llenado<span class="text-chico">[%]</span>(fill)</p>
+            <p>Tamaño (size)</p>
             <p>D. interior<span class="text-chico">[mm]</span></p>
         </div>
         <div class="caja4">
@@ -78,7 +78,7 @@ function first() {
             <p id="tamano_menor" class = "resultados"></p>
             <p id="D_interno_menor" class = "resultados"></p>
         </div>
-        <div class="caja4">
+        <div class="caja4" style="background-color: rgb(255, 180, 60);">
             <p class = "label-text-right">Tamaño</p>
             <p id="llenado_porc_tamano_aprox" class = "resultados"></p>
             <p id="tamano_aprox" class = "resultados"></p>
@@ -95,8 +95,8 @@ function first() {
 
     <div class="caja_contenedor">
 
-        <div class="caja4">
-            <p class = "label-text-right">Llenado<span class="text-chico">[mm^2]:</span></p>
+        <div class="caja4" style="background-color: rgb(255, 180, 60);">
+            <p class = "label-text-right">Llenado<span class="text-chico">[mm<sup>2</sup>]:</span></p>
             <p id="llenado_mm" class = "resultados"></p>
         </div>
 
@@ -150,9 +150,9 @@ function first() {
     <div class="caja_contenedor">
 
         <div class="caja4_cables_sin_borde">
-            <p class="text-p">Aislamiento</p>
+            <p class="text-p">Aislamiento (insulation)</p>
             <p class="text-p">Calibre <span class="text-chico">[AWG/kcmil]</span></p>
-            <p class="text-p">Cantidad</p>
+            <p class="text-p">Cantidad qty</p>
             <p class="text-p">D. exterior <span class="text-chico">[mm]</span></p>
         </div>
 
@@ -201,8 +201,8 @@ function first() {
         </form>
 
         <div class=caja4_version2>
-            <input type="button" value="Quitar"  onclick="quitar()" class="datos">
-            <input type="button" value="Agregar" onclick="agregar()" class="datos">
+            <input type="button" value="Quitar (remove)"  onclick="quitar()" class="datos">
+            <input type="button" value="Agregar (add)" onclick="agregar()" class="datos">
         </div>
     </div>
 
@@ -327,6 +327,7 @@ function calculo_principal() {
     document.getElementById("llenado_porc_tamano_aprox").innerHTML = object_tamano_conduit.llenado_porc_calculado.toFixed($decimales);
 
     object_tamano_conduit_menor = seleccionador_tamano_conduit($tipo_conduit, $suma_areas, $llenado_porc_input, $indice_conduit_seleccionado-1, false);
+
 
     document.getElementById("tamano_menor").innerHTML = tamano_completo_conduit_string_array[object_tamano_conduit_menor.indice_conduit];
     document.getElementById("D_interno_menor").innerHTML = object_tamano_conduit_menor.mm_tamano_conduit;
